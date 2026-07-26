@@ -4,6 +4,7 @@ import styles from './List.module.css';
 
 export interface IAppProps {
     taskList: ITask[]
+    handleDelete(id: number): void
 }
 
 export default function List (props: IAppProps) {
@@ -19,7 +20,7 @@ export default function List (props: IAppProps) {
                 </div>
                 <div className={styles.actions}>
                     <i className="bi bi-pencil"></i>
-                    <i className="bi bi-trash"></i>
+                    <i className="bi bi-trash" onClick={() => props.handleDelete(task.id)}></i>
                 </div>
             </div>
         ))

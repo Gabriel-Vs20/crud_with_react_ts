@@ -8,13 +8,22 @@ import {ITask} from './interfaces/Task'
 
 function App() {
 
-  const [taskList, setTaskList] = React.useState<ITask[]>([])
+  const [taskList, setTaskList] = React.useState<ITask[]>([]);
+
+  function deleteTask (id: number){
+    setTaskList(
+      taskList.filter((task => {
+        return task.id !== id
+      }))
+    )
+  }
+
   return (
     <div>
       <Header/>
       <main className={styles.main}>
         <Form btnText='Criar tarefa' taskList={taskList} setTaskList={setTaskList}/>
-        <List taskList={taskList}/>
+        <List taskList={taskList} handleDelete={deleteTask}/>
       </main>
       <Footer/>
     </div>    
