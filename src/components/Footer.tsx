@@ -1,12 +1,12 @@
 import * as React from 'react';
-
+import styles from './Footer.module.css'
 
 export default function Footer () {
   return (
     <div>
-        <footer>
+        <footer className={styles.footer}>
         <p>
-          <span>React + TS CRUD</span> @2021
+          <span>React + TS CRUD</span> @2026
         </p>
       </footer>
     </div>
