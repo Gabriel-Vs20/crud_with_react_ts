@@ -2,13 +2,16 @@ import React from 'react';
 import Footer from './components/Footer';
 import Header from './components/Header';
 import styles from './App.module.css';
+import Form from './components/Form';
+import List from './components/List';
 
 function App() {
   return (
     <div>
       <Header/>
       <main className={styles.main}>
-        <h1>Conteúdo</h1>
+        <Form btnText='Criar tarefa'/>
+        <List />
       </main>
       <Footer/>
     </div>    
