@@ -6,3 +6,6 @@
 .hide{
   display: none !important;
 }
+.showModal{
+  display: block;
+}
