@@ -3,8 +3,9 @@ import { ITask } from '../interfaces/Task';
 import styles from './List.module.css';
 
 export interface IAppProps {
-    taskList: ITask[]
-    handleDelete(id: number): void
+    taskList: ITask[];
+    handleDelete(id: number): void;
+    handleEditTask(task :ITask): void;
 }
 
 export default function List (props: IAppProps) {
@@ -19,7 +20,7 @@ export default function List (props: IAppProps) {
                     <p>Dificuldade: {task.difficulty}</p>
                 </div>
                 <div className={styles.actions}>
-                    <i className="bi bi-pencil"></i>
+                    <i className="bi bi-pencil" onClick={() => props.handleEditTask(task)}></i>
                     <i className="bi bi-trash" onClick={() => props.handleDelete(task.id)}></i>
                 </div>
             </div>
